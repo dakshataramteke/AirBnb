@@ -1,0 +1,57 @@
+
+.fa-compass{
+ color:rgb(238, 60, 60);
+ font-size: 2rem;
+}
+.navbar .nav-link{
+    color: white !important;
+}
+.form-control:focus{
+    box-shadow: none !important;;
+}
+
+/* Footer Links  */
+.footer-info{
+    text-align: center;
+    height: 8rem;
+    display: flex;
+    justify-content: center !important;
+    flex-direction: column;
+    align-items: space-evenly !important;
+    /* background-color: blue;  */
+}
+.f-info-socials i,
+.f-info-links a{
+    margin: 0 0.75rem !important;
+    color: black !important;
+    color: white !important;
+
+}
+.f-info-links,
+.f-info-socials{
+    width: 100%;
+    vertical-align: middle !important;;
+}
+.f-info-links a{
+    text-decoration: none !important;
+}
+.f-info-links a:hover{
+    text-decoration: underline !important;
+}
+
+/* Cards  */
+.card{
+    border: none !important;
+}
+.listing_link{
+text-decoration: none !important;
+}
+
+/* Overlay text  */
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.5;
+    background-color: white;
+}

@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate.ejs') -%>
+<body>
+    <h2>Edit Listings</h2>
+    <form action="/listings/<%=listing._id%>?_method=PUT" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="my-2">
+                    <label for="" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="listing[title]" value="<%= listing.title %>">
+                </div>
+                <div class="my-2">
+                    <label for="" class="form-label">Description</label>
+                    <textarea class="form-control" name="listing[description]"  id=""><%= listing.description %>"</textarea>
+                </div>
+                <div class="my-2">
+                    <label for="" class="form-label">Image</label>
+                    <input type="text" class="form-control" name="listing[image]"value="<%= listing.image %>">
+                </div>
+                <div class="row">
+                    <div class="my-2 col-12 col-md-4">
+                        <label for="" class="form-label">Number</label>
+                        <input type="number" class="form-control" name="listing[price]" value="<%= listing.price %>" >
+                    </div>
+                    <div class="my-2 col-12 col-md-8">
+                        <label for="" class="form-label">Country</label>
+                        <input type="text" class="form-control" name="listing[country]" value="<%= listing.country %>">
+                    </div>
+                </div>
+              
+                <div class="my-2 ">
+                    <label for="" class="form-label">Location</label>
+                    <input type="text" class="form-control" name="listing[location]" value="<%= listing.location %>">
+                </div>
+                <button class="btn btn-success my-3">Edit</button>
+            
+            </div>
+        </div>
+    
+    </form>
+</body>
