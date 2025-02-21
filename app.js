@@ -27,8 +27,9 @@ app.get("/listings/new",async(req,res)=>{
 })
 
 //Create Route
-app.post("/listings",async(req,res)=>{
-    let listing = req.body.listing;
+app.post("/listings",async(req,res,next)=>{
+    try{
+        let listing = req.body.listing;
     const listings = new Listing({ 
         title: listing.title,
         description: listing.description,
@@ -39,6 +40,10 @@ app.post("/listings",async(req,res)=>{
      });
     await listings.save();
     res.redirect("listings");
+    }catch(err){
+        next(err)
+    }
+    
 })
 
 // Edit Route
@@ -66,6 +71,10 @@ app.get("/listings/:id",async(req,res)=>{
     let {id} = req.params;
     const listings = await Listing.findById(id);
     res.render("listings/show.ejs",{listings})
+})
+
+app.use((err,req,res,next)=>{
+   res.send("Sommething went wrong !!");
 })
 
 app.listen(port,()=>{

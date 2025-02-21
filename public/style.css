@@ -9,11 +9,20 @@
 .form-control:focus{
     box-shadow: none !important;;
 }
+.navbar .navbar-toggler,
+.navbar .navbar-toggler:focus{
+    box-shadow:none !important;
+    border:none !important;
+}
+.navbar .bi-list-nested{
+    font-size: 2rem !important;
+}
 
 /* Footer Links  */
 .footer-info{
     text-align: center;
     height: 8rem;
+    line-height: 2rem;
     display: flex;
     justify-content: center !important;
     flex-direction: column;

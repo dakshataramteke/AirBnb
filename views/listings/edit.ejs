@@ -1,35 +1,53 @@
 <% layout('layouts/boilerplate.ejs') -%>
 <body>
     <h2>Edit Listings</h2>
-    <form action="/listings/<%=listing._id%>?_method=PUT" method="post">
+    <form action="/listings/<%=listing._id%>?_method=PUT" method="post" class="needs-validation" novalidate>
         <div class="container">
             <div class="row">
                 <div class="my-2">
                     <label for="" class="form-label">Title</label>
-                    <input type="text" class="form-control" name="listing[title]" value="<%= listing.title %>">
+                    <input type="text" class="form-control" name="listing[title]" value="<%= listing.title %>" required>
+                    <div class="invalid-feedback">
+                        Please choose a title.
+                      </div>
                 </div>
                 <div class="my-2">
                     <label for="" class="form-label">Description</label>
-                    <textarea class="form-control" name="listing[description]"  id=""><%= listing.description %>"</textarea>
+                    <textarea class="form-control" name="listing[description]"  id="" required><%= listing.description %>"</textarea>
+                    <div class="invalid-feedback">
+                        Please write a Description.
+                      </div>
                 </div>
                 <div class="my-2">
                     <label for="" class="form-label">Image</label>
                     <input type="text" class="form-control" name="listing[image]"value="<%= listing.image %>">
+                    <div class="invalid-feedback">
+                        Please choose a Image.
+                      </div>
                 </div>
                 <div class="row">
                     <div class="my-2 col-12 col-md-4">
                         <label for="" class="form-label">Number</label>
-                        <input type="number" class="form-control" name="listing[price]" value="<%= listing.price %>" >
+                        <input type="number" class="form-control" name="listing[price]" value="<%= listing.price %>" required>
+                        <div class="invalid-feedback">
+                            Please choose a Number.
+                          </div>
                     </div>
                     <div class="my-2 col-12 col-md-8">
                         <label for="" class="form-label">Country</label>
-                        <input type="text" class="form-control" name="listing[country]" value="<%= listing.country %>">
+                        <input type="text" class="form-control" name="listing[country]" value="<%= listing.country %>" required>
+                        <div class="invalid-feedback">
+                            Please choose a Country.
+                          </div>
                     </div>
                 </div>
               
                 <div class="my-2 ">
                     <label for="" class="form-label">Location</label>
-                    <input type="text" class="form-control" name="listing[location]" value="<%= listing.location %>">
+                    <input type="text" class="form-control" name="listing[location]" value="<%= listing.location %>" required>
+                    <div class="invalid-feedback">
+                        Please choose a Location.
+                      </div>
                 </div>
                 <button class="btn btn-success my-3">Edit</button>
             
@@ -37,4 +55,5 @@
         </div>
     
     </form>
+    <script src="/main.js"></script>
 </body>
